@@ -1,4 +1,4 @@
-package com.example.musicplayer.ui.theme
+package com.example.musicplayer.theme
 
 import android.app.Activity
 import android.os.Build
