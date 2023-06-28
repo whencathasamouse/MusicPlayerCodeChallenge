@@ -1,4 +1,4 @@
-package com.example.musicplayer.ui
+package com.example.musicplayer
 
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.layout.padding
@@ -9,9 +9,9 @@ import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
-import com.example.musicplayer.navigation.BottomNavBar
-import com.example.musicplayer.navigation.Feature
-import com.example.musicplayer.navigation.MainNavHost
+import com.example.musicplayer.shared.navigation.BottomNavBar
+import com.example.musicplayer.shared.navigation.Feature
+import com.example.musicplayer.shared.navigation.MainNavHost
 
 /**
  * The main screen of the app that hosts the bottom navigation bar and content.

@@ -1,4 +1,4 @@
-package com.example.musicplayer.navigation
+package com.example.musicplayer.shared.navigation
 
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.Image
@@ -16,9 +16,9 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
-import com.example.musicplayer.ui.nowplaying.NowPlayingScreen
-import com.example.musicplayer.ui.rooms.RoomScreen
-import com.example.musicplayer.ui.settings.SettingScreen
+import com.example.musicplayer.nowplaying.NowPlayingRoute
+import com.example.musicplayer.rooms.RoomRoute
+import com.example.musicplayer.settings.SettingRoute
 
 @ExperimentalFoundationApi
 @Composable
@@ -29,13 +29,13 @@ fun MainNavHost(navController: NavHostController, modifier: Modifier = Modifier)
         modifier = modifier
     ) {
         composable(Feature.Rooms.route) {
-            RoomScreen()
+            RoomRoute()
         }
         composable(Feature.NowPlaying.route) {
-            NowPlayingScreen()
+            NowPlayingRoute()
         }
         composable(Feature.Setting.route) {
-            SettingScreen()
+            SettingRoute()
         }
     }
 }
@@ -49,14 +49,14 @@ fun BottomNavBar(
     NavigationBar(
         modifier = Modifier
             .fillMaxWidth()
-            .clip(RoundedCornerShape(16.dp, 16.dp, 0.dp, 0.dp)),
+            .clip(RoundedCornerShape(16.dp, 16.dp, 0.dp, 0.dp))
     ) {
         allScreens.forEach { screen ->
             NavigationBarItem(
                 icon = {
                     Image(
                         painter = painterResource(screen.icon),
-                        contentDescription = screen.route,
+                        contentDescription = screen.route
                     )
                 },
                 label = { Text(text = screen.title, style = MaterialTheme.typography.labelSmall) },
@@ -68,5 +68,4 @@ fun BottomNavBar(
             )
         }
     }
-
 }

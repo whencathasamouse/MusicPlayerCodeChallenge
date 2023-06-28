@@ -1,4 +1,4 @@
-package com.example.musicplayer.theme
+package com.example.musicplayer.shared.theme
 
 import android.app.Activity
 import android.os.Build
