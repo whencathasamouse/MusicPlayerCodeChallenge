@@ -32,6 +32,7 @@ import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import coil.compose.AsyncImage
 import com.example.musicplayer.R
+import com.example.musicplayer.shared.theme.HeosTheme
 
 @Composable
 fun RoomRoute(
@@ -51,7 +52,7 @@ private fun RoomScreen(
     uiState: RoomScreenState.State
 ) {
     LazyColumn(
-        modifier = modifier.fillMaxSize(),
+        modifier = modifier.fillMaxSize().background(HeosTheme.color.customColor),
         contentPadding = PaddingValues(16.dp),
         verticalArrangement = Arrangement.spacedBy(8.dp)
     ) {
@@ -98,7 +99,7 @@ private fun RoomItem(
             )
             Spacer(modifier = Modifier.size(8.dp))
             Column {
-                Text(text = room.deviceName, style = MaterialTheme.typography.labelLarge)
+                Text(text = room.deviceName, style = HeosTheme.typography.display1)
                 Row(verticalAlignment = Alignment.CenterVertically) {
                     when (room.playingState) {
                         PlayingState.PLAYING -> {
